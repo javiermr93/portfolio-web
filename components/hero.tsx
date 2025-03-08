@@ -88,7 +88,7 @@ export function Hero() {
                     repeatType: "reverse",
                   }}
                 >
-                  John Doe
+                  Javier Martín
                 </motion.span>
               </motion.h1>
               <motion.p className="max-w-[600px] text-muted-foreground md:text-xl h-[60px]" variants={item}>
@@ -134,7 +134,7 @@ export function Hero() {
                   whileTap={{ scale: 0.9 }}
                 >
                   <Link
-                    href={i === 2 ? "mailto:contact@example.com" : `https://${i === 0 ? "github" : "linkedin"}.com`}
+                    href={i === 2 ? "mailto:javiermr.dev@gmail.com" : `https://${i === 0 ? "github.com/javiermr93" : "linkedin.com/in/javier-martín-romero-332262162/"}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -163,7 +163,7 @@ export function Hero() {
             }}
           >
             <motion.div
-              className="relative h-[400px] w-[400px] rounded-full bg-gradient-to-r from-primary to-primary/50 p-1"
+              className="relative h-[400px] w-[400px] rounded-full bg-gradient-to-r from-secondary to-secondary/50 p-1"
               animate={{
                 boxShadow: [
                   "0 0 20px rgba(59, 130, 246, 0.5)",
@@ -179,8 +179,8 @@ export function Hero() {
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 <img
-                  src="/placeholder.svg?height=400&width=400"
-                  alt="Developer portrait"
+                  src="/javi.png?height=400&width=400"
+                  alt="javier martín"
                   className="h-full w-full object-cover"
                 />
               </motion.div>

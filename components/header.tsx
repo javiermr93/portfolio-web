@@ -60,7 +60,7 @@ export function Header() {
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
           <Link href="/" className="flex items-center space-x-2">
             <motion.span className="text-xl font-bold" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              DevPortfolio
+              JMR
             </motion.span>
           </Link>
         </motion.div>

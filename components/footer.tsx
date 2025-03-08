@@ -9,10 +9,10 @@ export function Footer() {
   const { t } = useLanguage()
 
   const socialIcons = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Mail, href: "mailto:contact@example.com", label: "Email" },
+    { icon: Github, href: "https://github.com/javiermr93", label: "GitHub" },
+    { icon: Linkedin, href: "https://linkedin.com/in/javier-martín-romero-332262162/", label: "LinkedIn" },
+    // { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: Mail, href: "mailto:javiermr.dev@gmail.com", label: "Email" },
   ]
 
   return (
@@ -29,7 +29,7 @@ export function Footer() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          © {new Date().getFullYear()} John Doe. {t("footer.rights")}
+          © {new Date().getFullYear()} Javier Martín. {t("footer.rights")}
         </motion.p>
         <div className="flex items-center gap-4">
           {socialIcons.map((item, i) => (
