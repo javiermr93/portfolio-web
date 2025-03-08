@@ -110,9 +110,9 @@ export function Contact() {
   }
 
   const contactInfo = [
-    { icon: Mail, titleKey: "contact.email", value: "contact@example.com" },
-    { icon: Phone, titleKey: "contact.phone", value: "+1 (555) 123-4567" },
-    { icon: MapPin, titleKey: "contact.location", value: "San Francisco, CA" },
+    { icon: Mail, titleKey: "contact.email", value: "javiermr.dev@gmail.com" },
+    // { icon: Phone, titleKey: "contact.phone", value: "+1 (555) 123-4567" },
+    { icon: MapPin, titleKey: "contact.location", value: "Sevilla, ES" },
   ]
 
   const formFields = [

@@ -10,6 +10,7 @@ type LanguageContextType = {
   t: (key: string) => string
 }
 
+// Añadir las traducciones para el proyecto de portfolio
 const translations = {
   en: {
     // Header
@@ -20,7 +21,7 @@ const translations = {
 
     // Hero
     "hero.greeting": "Hi, I'm",
-    "hero.role": "Full Stack Developer specializing in building exceptional digital experiences.",
+    "hero.role": "Full Stack Developer specializing in web development with React, Node.js and AWS.",
     "hero.contactMe": "Contact Me",
     "hero.downloadResume": "Download Resume",
 
@@ -67,19 +68,45 @@ const translations = {
     "footer.rights": "All rights reserved.",
 
     // Project descriptions
-    "project1.title": "E-Commerce Platform",
+    "project1.title": "Booking Management System",
     "project1.description":
-      "A full-featured e-commerce platform with payment processing, user authentication, and admin dashboard.",
-    "project2.title": "Social Media Dashboard",
-    "project2.description": "Analytics dashboard for social media managers with real-time data visualization.",
-    "project3.title": "Task Management API",
-    "project3.description": "RESTful API for task management with authentication, authorization, and documentation.",
-    "project4.title": "Weather Application",
-    "project4.description": "Real-time weather application with location detection and 5-day forecast.",
-    "project5.title": "Inventory Management System",
-    "project5.description": "Complete inventory management system for small businesses with reporting features.",
-    "project6.title": "Authentication Microservice",
-    "project6.description": "Standalone authentication microservice with OAuth integration and user management.",
+      "A comprehensive booking management system for hotels with payment processing, user authentication, and admin dashboard.",
+    "project2.title": "E-commerce Platform",
+    "project2.description": "Full-featured e-commerce platform with React, Node.js and AWS infrastructure.",
+    "project3.title": "Real Estate API",
+    "project3.description":
+      "RESTful API for real estate management with authentication, authorization, and documentation.",
+    "project4.title": "Inventory Management System",
+    "project4.description": "Complete inventory management system for small businesses with reporting features.",
+    "project5.title": "CRM System",
+    "project5.description": "Customer Relationship Management system with analytics dashboard and email integration.",
+    "project6.title": "Authentication Service",
+    "project6.description": "Standalone authentication service with OAuth integration and user management.",
+    "project7.title": "Personal Portfolio",
+    "project7.description":
+      "Interactive portfolio website built with Next.js, React, Tailwind CSS and Framer Motion, featuring multilingual support.",
+
+    // About
+    "about.title": "About Me",
+    "about.description":
+      "I'm a Full Stack Developer with over 5 years of experience in web development. I specialize in building scalable web applications using React, Node.js, and AWS. I have a strong background in both frontend and backend development, with expertise in creating responsive user interfaces and robust server-side applications.",
+    "about.experience": "Professional Experience",
+    "about.exp1.title": "Full Stack Developer at Accenture",
+    "about.exp1.date": "2021 - Present",
+    "about.exp1.description":
+      "Working on enterprise-level web applications using React, Node.js, and AWS. Implementing CI/CD pipelines and maintaining cloud infrastructure.",
+    "about.exp2.title": "Web Developer at Indra",
+    "about.exp2.date": "2019 - 2021",
+    "about.exp2.description":
+      "Developed and maintained web applications for clients in the financial sector. Worked with React, Angular, and Java Spring.",
+    "about.exp3.title": "Junior Developer at Everis",
+    "about.exp3.date": "2018 - 2019",
+    "about.exp3.description":
+      "Started my career working on frontend development with HTML, CSS, JavaScript, and jQuery.",
+    "about.education": "Education",
+    "about.edu1.title": "Computer Science Engineering",
+    "about.edu1.institution": "Universidad Politécnica de Madrid",
+    "about.edu1.date": "2014 - 2018",
   },
   es: {
     // Header
@@ -90,7 +117,7 @@ const translations = {
 
     // Hero
     "hero.greeting": "Hola, soy",
-    "hero.role": "Desarrollador Full Stack especializado en crear experiencias digitales excepcionales.",
+    "hero.role": "Desarrollador Full Stack especializado en desarrollo web con React, Node.js y AWS.",
     "hero.contactMe": "Contáctame",
     "hero.downloadResume": "Descargar CV",
 
@@ -137,22 +164,47 @@ const translations = {
     "footer.rights": "Todos los derechos reservados.",
 
     // Project descriptions
-    "project1.title": "Plataforma de Comercio Electrónico",
+    "project1.title": "Sistema de Gestión de Reservas",
     "project1.description":
-      "Una plataforma de comercio electrónico completa con procesamiento de pagos, autenticación de usuarios y panel de administración.",
-    "project2.title": "Panel de Redes Sociales",
-    "project2.description":
-      "Panel de análisis para gestores de redes sociales con visualización de datos en tiempo real.",
-    "project3.title": "API de Gestión de Tareas",
-    "project3.description": "API RESTful para gestión de tareas con autenticación, autorización y documentación.",
-    "project4.title": "Aplicación del Clima",
+      "Un sistema completo de gestión de reservas para hoteles con procesamiento de pagos, autenticación de usuarios y panel de administración.",
+    "project2.title": "Plataforma de Comercio Electrónico",
+    "project2.description": "Plataforma de comercio electrónico completa con React, Node.js e infraestructura AWS.",
+    "project3.title": "API de Bienes Raíces",
+    "project3.description":
+      "API RESTful para gestión de bienes raíces con autenticación, autorización y documentación.",
+    "project4.title": "Sistema de Gestión de Inventario",
     "project4.description":
-      "Aplicación meteorológica en tiempo real con detección de ubicación y pronóstico de 5 días.",
-    "project5.title": "Sistema de Gestión de Inventario",
-    "project5.description":
       "Sistema completo de gestión de inventario para pequeñas empresas con funciones de informes.",
-    "project6.title": "Microservicio de Autenticación",
-    "project6.description": "Microservicio de autenticación independiente con integración OAuth y gestión de usuarios.",
+    "project5.title": "Sistema CRM",
+    "project5.description":
+      "Sistema de Gestión de Relaciones con Clientes con panel de análisis e integración de correo electrónico.",
+    "project6.title": "Servicio de Autenticación",
+    "project6.description": "Servicio de autenticación independiente con integración OAuth y gestión de usuarios.",
+    "project7.title": "Portfolio Personal",
+    "project7.description":
+      "Sitio web de portfolio interactivo construido con Next.js, React, Tailwind CSS y Framer Motion, con soporte multilingüe.",
+
+    // About
+    "about.title": "Sobre Mí",
+    "about.description":
+      "Soy un Desarrollador Full Stack con más de 5 años de experiencia en desarrollo web. Me especializo en construir aplicaciones web escalables utilizando React, Node.js y AWS. Tengo una sólida formación tanto en desarrollo frontend como backend, con experiencia en la creación de interfaces de usuario responsivas y aplicaciones robustas del lado del servidor.",
+    "about.experience": "Experiencia Profesional",
+    "about.exp1.title": "Desarrollador Full Stack en Accenture",
+    "about.exp1.date": "2021 - Presente",
+    "about.exp1.description":
+      "Trabajo en aplicaciones web de nivel empresarial utilizando React, Node.js y AWS. Implementación de pipelines CI/CD y mantenimiento de infraestructura en la nube.",
+    "about.exp2.title": "Desarrollador Web en Indra",
+    "about.exp2.date": "2019 - 2021",
+    "about.exp2.description":
+      "Desarrollé y mantuve aplicaciones web para clientes del sector financiero. Trabajé con React, Angular y Java Spring.",
+    "about.exp3.title": "Desarrollador Junior en Everis",
+    "about.exp3.date": "2018 - 2019",
+    "about.exp3.description":
+      "Comencé mi carrera trabajando en desarrollo frontend con HTML, CSS, JavaScript y jQuery.",
+    "about.education": "Educación",
+    "about.edu1.title": "Ingeniería Informática",
+    "about.edu1.institution": "Universidad Politécnica de Madrid",
+    "about.edu1.date": "2014 - 2018",
   },
 }
 
