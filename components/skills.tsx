@@ -1,111 +1,191 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { useRef } from "react"
+import { motion, useInView } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-
-// Skill data
-const skillCategories = [
-  {
-    id: "frontend",
-    title: "Frontend",
-    skills: [
-      { name: "HTML5", icon: "🌐", proficiency: 90 },
-      { name: "CSS3", icon: "🎨", proficiency: 85 },
-      { name: "JavaScript", icon: "📜", proficiency: 90 },
-      { name: "TypeScript", icon: "🔷", proficiency: 85 },
-      { name: "React", icon: "⚛️", proficiency: 90 },
-      { name: "Next.js", icon: "▲", proficiency: 85 },
-      { name: "Tailwind CSS", icon: "🌊", proficiency: 80 },
-      { name: "Redux", icon: "🔄", proficiency: 75 },
-    ],
-  },
-  {
-    id: "backend",
-    title: "Backend",
-    skills: [
-      { name: "Node.js", icon: "🟢", proficiency: 85 },
-      { name: "Express", icon: "🚂", proficiency: 85 },
-      { name: "Python", icon: "🐍", proficiency: 75 },
-      { name: "Django", icon: "🎸", proficiency: 70 },
-      { name: "GraphQL", icon: "⬢", proficiency: 75 },
-      { name: "REST API", icon: "🔌", proficiency: 90 },
-      { name: "MongoDB", icon: "🍃", proficiency: 80 },
-      { name: "PostgreSQL", icon: "🐘", proficiency: 75 },
-    ],
-  },
-  {
-    id: "tools",
-    title: "Tools & Others",
-    skills: [
-      { name: "Git", icon: "🔄", proficiency: 90 },
-      { name: "Docker", icon: "🐳", proficiency: 75 },
-      { name: "AWS", icon: "☁️", proficiency: 70 },
-      { name: "CI/CD", icon: "🔄", proficiency: 75 },
-      { name: "Jest", icon: "🃏", proficiency: 80 },
-      { name: "Cypress", icon: "🧪", proficiency: 75 },
-      { name: "Figma", icon: "🎨", proficiency: 70 },
-      { name: "Agile/Scrum", icon: "📊", proficiency: 85 },
-    ],
-  },
-]
+import { useLanguage } from "@/context/language-context"
 
 export function Skills() {
-  return (
-    <section id="skills" className="py-24">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">My Skills</h2>
-            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">Technologies and tools I work with</p>
-          </div>
+  const { t } = useLanguage()
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.2 })
 
-          <div className="w-full max-w-3xl mt-12">
+  // Skill data
+  const skillCategories = [
+    {
+      id: "frontend",
+      titleKey: "skills.frontend",
+      skills: [
+        { name: "HTML5", icon: "🌐", proficiency: 90 },
+        { name: "CSS3", icon: "🎨", proficiency: 85 },
+        { name: "JavaScript", icon: "📜", proficiency: 90 },
+        { name: "TypeScript", icon: "🔷", proficiency: 85 },
+        { name: "React", icon: "⚛️", proficiency: 90 },
+        { name: "Next.js", icon: "▲", proficiency: 85 },
+        { name: "Tailwind CSS", icon: "🌊", proficiency: 80 },
+        { name: "Redux", icon: "🔄", proficiency: 75 },
+      ],
+    },
+    {
+      id: "backend",
+      titleKey: "skills.backend",
+      skills: [
+        { name: "Node.js", icon: "🟢", proficiency: 85 },
+        { name: "Express", icon: "🚂", proficiency: 85 },
+        { name: "Python", icon: "🐍", proficiency: 75 },
+        { name: "Django", icon: "🎸", proficiency: 70 },
+        { name: "GraphQL", icon: "⬢", proficiency: 75 },
+        { name: "REST API", icon: "🔌", proficiency: 90 },
+        { name: "MongoDB", icon: "🍃", proficiency: 80 },
+        { name: "PostgreSQL", icon: "🐘", proficiency: 75 },
+      ],
+    },
+    {
+      id: "tools",
+      titleKey: "skills.tools",
+      skills: [
+        { name: "Git", icon: "🔄", proficiency: 90 },
+        { name: "Docker", icon: "🐳", proficiency: 75 },
+        { name: "AWS", icon: "☁️", proficiency: 70 },
+        { name: "CI/CD", icon: "🔄", proficiency: 75 },
+        { name: "Jest", icon: "🃏", proficiency: 80 },
+        { name: "Cypress", icon: "🧪", proficiency: 75 },
+        { name: "Figma", icon: "🎨", proficiency: 70 },
+        { name: "Agile/Scrum", icon: "📊", proficiency: 85 },
+      ],
+    },
+  ]
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  }
+
+  const tabVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.3,
+        duration: 0.5,
+      },
+    },
+  }
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  }
+
+  const skillItemVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: (i) => ({
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: i * 0.05,
+        duration: 0.3,
+        type: "spring",
+        stiffness: 100,
+      },
+    }),
+  }
+
+  return (
+    <section id="skills" className="py-24 overflow-hidden">
+      <div className="container px-4 md:px-6">
+        <motion.div
+          ref={ref}
+          className="flex flex-col items-center justify-center space-y-4 text-center"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          <motion.div className="space-y-2" variants={titleVariants}>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("skills.title")}</h2>
+            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">{t("skills.subtitle")}</p>
+          </motion.div>
+
+          <motion.div className="w-full max-w-3xl mt-12" variants={tabVariants}>
             <Tabs defaultValue="frontend" className="w-full">
               <TabsList className="grid w-full grid-cols-3">
                 {skillCategories.map((category) => (
-                  <TabsTrigger key={category.id} value={category.id}>
-                    {category.title}
-                  </TabsTrigger>
+                  <motion.div key={category.id} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <TabsTrigger value={category.id}>{t(category.titleKey)}</TabsTrigger>
+                  </motion.div>
                 ))}
               </TabsList>
 
               {skillCategories.map((category) => (
                 <TabsContent key={category.id} value={category.id} className="mt-6">
-                  <Card>
-                    <CardContent className="p-6">
-                      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                        {category.skills.map((skill, index) => (
-                          <motion.div
-                            key={skill.name}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3, delay: index * 0.05 }}
-                            className="flex flex-col items-center gap-2"
-                          >
-                            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-muted">
-                              <span className="text-3xl">{skill.icon}</span>
-                            </div>
-                            <h3 className="font-medium">{skill.name}</h3>
-                            <div className="h-2 w-full rounded-full bg-muted">
+                  <motion.div variants={cardVariants} initial="hidden" animate="visible">
+                    <Card>
+                      <CardContent className="p-6">
+                        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                          {category.skills.map((skill, index) => (
+                            <motion.div
+                              key={skill.name}
+                              custom={index}
+                              variants={skillItemVariants}
+                              whileHover={{
+                                y: -5,
+                                transition: { type: "spring", stiffness: 300, damping: 10 },
+                              }}
+                              className="flex flex-col items-center gap-2"
+                            >
                               <motion.div
-                                className="h-full rounded-full bg-primary"
-                                initial={{ width: 0 }}
-                                animate={{ width: `${skill.proficiency}%` }}
-                                transition={{ duration: 1, delay: 0.5 }}
-                              />
-                            </div>
-                            <span className="text-sm text-muted-foreground">{skill.proficiency}%</span>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
+                                className="flex h-20 w-20 items-center justify-center rounded-full bg-muted"
+                                whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+                                transition={{ duration: 0.5 }}
+                              >
+                                <span className="text-3xl">{skill.icon}</span>
+                              </motion.div>
+                              <h3 className="font-medium">{skill.name}</h3>
+                              <div className="h-2 w-full rounded-full bg-muted">
+                                <motion.div
+                                  className="h-full rounded-full bg-primary"
+                                  initial={{ width: 0 }}
+                                  animate={{ width: `${skill.proficiency}%` }}
+                                  transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
+                                />
+                              </div>
+                              <span className="text-sm text-muted-foreground">{skill.proficiency}%</span>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
                 </TabsContent>
               ))}
             </Tabs>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )
