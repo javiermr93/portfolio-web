@@ -13,6 +13,7 @@ export function Header() {
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState("")
 
   useEffect(() => {
     // Check if user prefers dark mode
@@ -76,8 +77,9 @@ export function Header() {
             >
               <Link
                 href={`#${item.key}`}
+                onClick={() => setActiveSection(item.key)}
                 className={`text-sm font-medium transition-colors hover:text-primary ${
-                  item.key === "about" ? "font-bold" : "text-muted-foreground"
+                  item.key === activeSection ? "font-bold" : "text-muted-foreground"
                 }`}
               >
                 <motion.span whileHover={{ y: -2 }} whileTap={{ y: 0 }}>

@@ -2,16 +2,19 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { useLanguage } from "@/context/language-context"
+import { useToast } from "@/hooks/use-toast"
 
 export function Hero() {
   const { t, language } = useLanguage()
+  const { toast } = useToast()
   const [isVisible, setIsVisible] = useState(false)
   const [text, setText] = useState("")
   const [index, setIndex] = useState(0)
+  const [isDownloading, setIsDownloading] = useState(false)
 
   // Get the translated role text
   const fullText = t("hero.role")
@@ -33,6 +36,43 @@ export function Hero() {
       return () => clearTimeout(timeout)
     }
   }, [index, isVisible, fullText])
+
+  const handleDownloadCV = async () => {
+    try {
+      setIsDownloading(true)
+
+      // Determine which CV to download based on language
+      const cvFileName = language === "es" ? "CV_JavierMartínRomero.pdf" : "CV_JavierMartínRomero.pdf"
+
+      // Create a link element
+      const link = document.createElement("a")
+      link.href = `/${cvFileName}`
+      link.setAttribute("download", cvFileName)
+
+      // Append to the document, click it, and remove it
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+
+      // Show success toast
+      toast({
+        title: language === "es" ? "CV descargado con éxito" : "CV downloaded successfully",
+        description: language === "es" ? "Gracias por tu interés" : "Thank you for your interest",
+        duration: 3000,
+      })
+    } catch (error) {
+      // Show error toast
+      toast({
+        title: language === "es" ? "Error al descargar el CV" : "Error downloading CV",
+        description: language === "es" ? "Por favor, inténtalo de nuevo más tarde" : "Please try again later",
+        variant: "destructive",
+        duration: 3000,
+      })
+      console.error("Error downloading CV:", error)
+    } finally {
+      setIsDownloading(false)
+    }
+  }
 
   const container = {
     hidden: { opacity: 0 },
@@ -115,7 +155,23 @@ export function Hero() {
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button variant="outline">{t("hero.downloadResume")}</Button>
+              <Button variant="outline" onClick={handleDownloadCV} disabled={isDownloading}>
+                  {isDownloading ? (
+                    <>
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                        className="mr-2 h-4 w-4 border-2 border-current border-t-transparent rounded-full"
+                      />
+                      {language === "es" ? "Descargando..." : "Downloading..."}
+                    </>
+                  ) : (
+                    <>
+                      <Download className="mr-2 h-4 w-4" />
+                      {t("hero.downloadResume")}
+                    </>
+                  )}
+                </Button>
               </motion.div>
             </motion.div>
             <div className="flex gap-4 mt-4">
@@ -134,7 +190,7 @@ export function Hero() {
                   whileTap={{ scale: 0.9 }}
                 >
                   <Link
-                    href={i === 2 ? "mailto:javiermr.dev@gmail.com" : `https://${i === 0 ? "github.com/javiermr93" : "linkedin.com/in/javier-martín-romero-332262162/"}`}
+                    href={i === 2 ? "mailto:javiermr.dev@gmail.com" : `https://${i === 0 ? "github.com/javiermr93" : "linkedin.com/in/javiermrdev/"}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

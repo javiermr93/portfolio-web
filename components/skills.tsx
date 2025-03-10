@@ -147,7 +147,7 @@ export function Skills() {
                   <motion.div variants={cardVariants} initial="hidden" animate="visible">
                     <Card>
                       <CardContent className="p-6">
-                        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                        <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
                           {category.skills.map((skill, index) => (
                             <motion.div
                               key={skill.name}

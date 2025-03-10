@@ -186,7 +186,7 @@ export function Contact() {
             </motion.div>
 
             {/* Contact Form */}
-            <motion.div variants={cardVariants}>
+            {/* <motion.div variants={cardVariants}>
               <Card>
                 <CardHeader>
                   <CardTitle>{t("contact.sendMessage")}</CardTitle>
@@ -264,7 +264,7 @@ export function Contact() {
                   </form>
                 </CardContent>
               </Card>
-            </motion.div>
+            </motion.div> */}
           </div>
         </motion.div>
       </div>

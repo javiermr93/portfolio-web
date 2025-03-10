@@ -10,7 +10,7 @@ export function Footer() {
 
   const socialIcons = [
     { icon: Github, href: "https://github.com/javiermr93", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/javier-martín-romero-332262162/", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://linkedin.com/in/javiermrdev/", label: "LinkedIn" },
     // { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
     { icon: Mail, href: "mailto:javiermr.dev@gmail.com", label: "Email" },
   ]

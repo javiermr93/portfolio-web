@@ -21,7 +21,7 @@ const translations = {
 
     // Hero
     "hero.greeting": "Hi, I'm",
-    "hero.role": "Full Stack Developer specializing in web development with React, Node.js and AWS.",
+    "hero.role": "Full Stack Developer specializing in web and mobile application development using Angular, Ionic, Python (Django), and AWS.",
     "hero.contactMe": "Contact Me",
     "hero.downloadResume": "Download Resume",
 
@@ -85,28 +85,6 @@ const translations = {
     "project7.title": "Personal Portfolio",
     "project7.description":
       "Interactive portfolio website built with Next.js, React, Tailwind CSS and Framer Motion, featuring multilingual support.",
-
-    // About
-    "about.title": "About Me",
-    "about.description":
-      "I'm a Full Stack Developer with over 5 years of experience in web development. I specialize in building scalable web applications using React, Node.js, and AWS. I have a strong background in both frontend and backend development, with expertise in creating responsive user interfaces and robust server-side applications.",
-    "about.experience": "Professional Experience",
-    "about.exp1.title": "Full Stack Developer at Accenture",
-    "about.exp1.date": "2021 - Present",
-    "about.exp1.description":
-      "Working on enterprise-level web applications using React, Node.js, and AWS. Implementing CI/CD pipelines and maintaining cloud infrastructure.",
-    "about.exp2.title": "Web Developer at Indra",
-    "about.exp2.date": "2019 - 2021",
-    "about.exp2.description":
-      "Developed and maintained web applications for clients in the financial sector. Worked with React, Angular, and Java Spring.",
-    "about.exp3.title": "Junior Developer at Everis",
-    "about.exp3.date": "2018 - 2019",
-    "about.exp3.description":
-      "Started my career working on frontend development with HTML, CSS, JavaScript, and jQuery.",
-    "about.education": "Education",
-    "about.edu1.title": "Computer Science Engineering",
-    "about.edu1.institution": "Universidad Politécnica de Madrid",
-    "about.edu1.date": "2014 - 2018",
   },
   es: {
     // Header
@@ -117,7 +95,7 @@ const translations = {
 
     // Hero
     "hero.greeting": "Hola, soy",
-    "hero.role": "Desarrollador Full Stack especializado en desarrollo web con React, Node.js y AWS.",
+    "hero.role": "Desarrollador Full Stack especializado en desarrollo web con Angular, Ionic, Python (Django) y AWS.",
     "hero.contactMe": "Contáctame",
     "hero.downloadResume": "Descargar CV",
 
@@ -183,28 +161,6 @@ const translations = {
     "project7.title": "Portfolio Personal",
     "project7.description":
       "Sitio web de portfolio interactivo construido con Next.js, React, Tailwind CSS y Framer Motion, con soporte multilingüe.",
-
-    // About
-    "about.title": "Sobre Mí",
-    "about.description":
-      "Soy un Desarrollador Full Stack con más de 5 años de experiencia en desarrollo web. Me especializo en construir aplicaciones web escalables utilizando React, Node.js y AWS. Tengo una sólida formación tanto en desarrollo frontend como backend, con experiencia en la creación de interfaces de usuario responsivas y aplicaciones robustas del lado del servidor.",
-    "about.experience": "Experiencia Profesional",
-    "about.exp1.title": "Desarrollador Full Stack en Accenture",
-    "about.exp1.date": "2021 - Presente",
-    "about.exp1.description":
-      "Trabajo en aplicaciones web de nivel empresarial utilizando React, Node.js y AWS. Implementación de pipelines CI/CD y mantenimiento de infraestructura en la nube.",
-    "about.exp2.title": "Desarrollador Web en Indra",
-    "about.exp2.date": "2019 - 2021",
-    "about.exp2.description":
-      "Desarrollé y mantuve aplicaciones web para clientes del sector financiero. Trabajé con React, Angular y Java Spring.",
-    "about.exp3.title": "Desarrollador Junior en Everis",
-    "about.exp3.date": "2018 - 2019",
-    "about.exp3.description":
-      "Comencé mi carrera trabajando en desarrollo frontend con HTML, CSS, JavaScript y jQuery.",
-    "about.education": "Educación",
-    "about.edu1.title": "Ingeniería Informática",
-    "about.edu1.institution": "Universidad Politécnica de Madrid",
-    "about.edu1.date": "2014 - 2018",
   },
 }
 
